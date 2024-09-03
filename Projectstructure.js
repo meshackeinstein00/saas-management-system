@@ -1,0 +1,11 @@
+/saas-management-system/
+    /css/
+    /js/
+    /partials/
+    /includes/
+    /config/
+    index.php
+    dashboard.php
+    users.php
+    businesses.php
+    login.php

@@ -1,0 +1,216 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .header {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-mode .side-panel {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+
+/* Header Container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Increased height for better spacing */
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    position: relative; /* Ensures the header is positioned correctly */
+    z-index: 2; /* Keeps header above the side panel */
+}
+
+/* Logo Styling */
+.header .logo {
+    height: 50px; /* Adjusted size for better visibility */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Header Title */
+.header h2 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px; /* Reduced font size for a more balanced appearance */
+    margin: 0; /* Remove default margin */
+}
+
+/* Menu Button */
+.header .menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px; /* Increased size for better visibility */
+    cursor: pointer;
+}
+
+/* Right Section of Header */
+.header .header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Dark Mode Toggle */
+.header .dark-mode-toggle {
+    margin-right: 15px;
+}
+
+/* Logout Button */
+.header .logout-btn {
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    padding: 8px 12px; /* Slightly reduced padding */
+    border-radius: 5px;
+    font-size: 14px; /* Adjusted font size for better balance */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #f0a500;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.side-panel {
+    width: 250px;
+    height: calc(100vh - 60px); /* Full height from below header to bottom */
+    position: fixed;
+    top: 60px; /* Starts below the header */
+    left: 0;
+    background-color: #1f1f1f;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1; /* Ensure side panel is below the header */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.side-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.side-panel ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.side-panel ul li a:hover {
+    background-color: #f0a500;
+    color: #1f1f1f;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .side-panel {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0; /* Adjust for smaller screens */
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .logo {
+        height: 40px;  /* Reduce logo size for smaller screens */
+        margin-right: 10px;  /* Reduce margin on smaller screens */
+    }
+}
